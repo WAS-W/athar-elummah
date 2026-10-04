@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Athar</title>
+</head>
+<body style="overflow: hidden;">
+    <header class="header flex-col">
+        <div class="header-container flex-col">
+            <h2 class="main-title">أثر</h2>
+            <span class="page-title">الرئيسية</span>
+        </div>
+    </header>
+    <div class="random-thing">
+        <strong class="sayer"></strong>
+        <p class="text"></p>
+    </div>
+    <nav class="menu">
+            <h3 class="quran"><a href="quran.html">قرآن</a></h3>
+            <hr>
+            <h3 class="aqieda"><a href="tafsier.html">تفسير</a></h3>
+            <hr>
+            <h3 class="tafsieer"><a href="ahadieth.html">أحاديث</a></h3>
+            <hr>
+            <h3 class="hadieth"><a href="aaqieda.html">عقيدة</a></h3>
+    </nav>
+    <footer class="footer flex-row">
+        <a href="user.html" link><i class="fa-solid fa-user"></i></a>
+        <a href="community.html" link><i class="fa-solid fa-users"></i></a>
+        <i class="fa-solid fa-bars"></i>
+        <a href="index.html" link><i class="fa-solid fa-house"></i></a>  
+    </footer>
+    <script>
+    const items = [
+  {"قال شيخ الاسلام:  ": "التوحيد الذي جائت به الرسل انما يتضمن اثبات الالوهية لله وحده بان يشهد ان لا اله الا الله: لا يعبد الا اياه, ولا يتوكل الا عليه, ولا يوالي الا له, ولا يعادي الا فيه, ولا يعمل الا لاجله."},
+  {"قال ابن القيم: ": "والنفي المحض ليس توحيدا, وكذلك الاثبات بدون النفي, ولا يكون التوحيد الا متضمنا النفي ولاثبات. وهذا هو حقيقة التوحيد."},
+  {"في الصحيحين من حديث ابن مسعود: ": "قلت يا رسول الله: اي الذنب اعظم عند الله ؟ قال: { ان تجعل لله ندا وهو خلقك }"},
+  {"قال تعالى: ": "{ اولم يرى الانسان انا خلقناه من نطفة فاذا هو خصيم مبين ( 77 ) }"},
+  {"قال تعالى": "إني أخاف إن عصيت ربي عذاب يوم عظيم"},
+  {"قال صلى الله عليه وسلم": "اتق الله حيثما كنت واتبع السيئة الحسنة تمحها, وخالق الناس بخلق حسن"},
+  { "التوحيد في المعرفة والإثبات . . . إثبات ذات الرب والصفات": ""}
+]
+
+let i = Math.floor(Math.random() * items.length);
+let item = items[i];
+
+let sayer = Object.keys(item)[0];
+let text = Object.values(item)[0];
+
+document.querySelector(".sayer").textContent = sayer;
+document.querySelector(".text").textContent = text;
+
+let clicked = false;
+
+document.querySelector(".fa-bars").onclick = () => {
+  const menu = document.querySelector(".menu");
+
+  if (!clicked) {
+    menu.style.opacity = "1";
+    clicked = true;
+  } else {
+    menu.style.opacity = "0";
+    clicked = false;
+  }
+};
+
+    </script>
+</body>
+</html>
