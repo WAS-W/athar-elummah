@@ -243,17 +243,16 @@ if (window.location.pathname.endsWith("ahadieth.html")) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  let clicked = false;
-document.querySelector(".fa-bars").onclick = () => {
-  const menu = document.querySelector(".menu");
-
-  if (!clicked) {
-    menu.style.opacity = "1";
-    clicked = true;
-  } else {
-    menu.style.opacity = "0";
-    clicked = false;
+let clicked = false;
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".fa-bars")) {
+    const menu = document.querySelector(".menu");
+    if (!clicked) {
+      menu.style.opacity = "1";
+      clicked = true;
+    } else {
+      menu.style.opacity = "0";
+      clicked = false;
+    }
   }
-};
-})
+});
