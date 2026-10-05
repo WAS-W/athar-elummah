@@ -68,6 +68,18 @@ if (window.location.pathname.endsWith("user.html")) {
         </footer>
         <script src="script.js"></script>
           `;
+          let clicked = false;
+document.querySelector(".fa-bars").onclick = () => {
+  const menu = document.querySelector(".menu");
+
+  if (!clicked) {
+    menu.style.opacity = "1";
+    clicked = true;
+  } else {
+    menu.style.opacity = "0";
+    clicked = false;
+  }
+};
         }
       })
       .catch(err => console.error(err));
@@ -242,16 +254,3 @@ if (window.location.pathname.endsWith("ahadieth.html")) {
     .catch(err => console.error(err))
   }
 }
-
-let clicked = false;
-document.querySelector(".fa-bars").onclick = () => {
-  const menu = document.querySelector(".menu");
-
-  if (!clicked) {
-    menu.style.opacity = "1";
-    clicked = true;
-  } else {
-    menu.style.opacity = "0";
-    clicked = false;
-  }
-};
