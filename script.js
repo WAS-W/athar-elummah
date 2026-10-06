@@ -142,9 +142,8 @@ if (window.location.pathname.endsWith("quran.html")) {
     console.log(surahs)
     surahs.forEach(surah => {
       quranCont.innerHTML += `
-      <div onclick="goSurah(${parseInt(surah.number)})">
+      <div class="surah-name" onclick="goSurah(${parseInt(surah.number)})">
         <span class="go-surah" >${surah.name}</span>
-        <hr />
       <div>
       `
     })
@@ -160,14 +159,15 @@ function goSurah(surahNum) {
           console.log(selectedSurah.ayahs);
           document.getElementById("quran").innerHTML = `
           <a href = "quran.html" class="back">ارجع</a>
+        <div class="ayah-container"></div>
+          `
+          document.querySelector(".ayah-container").innerHTML = `
           ${selectedSurah.ayahs.map(
             (ayah) => `
-              <div class="ayah-container">
-                <span>${ayah.text}</span>
-                <span style="padding: 5px; border-radius: 50%; background: var(--footer); color: var(--second-text);">
+                <p>${ayah.text}</p>
+                <span class="flex-col">
                   ${ayah.numberInSurah}
                 </span>
-              </div>
             `
           )
           .join('')}
@@ -248,10 +248,10 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".fa-bars")) {
     const menu = document.querySelector(".menu");
     if (!clicked) {
-      menu.style.opacity = "1";
+      menu.setAttribute("style", "pointer-events: auto;opacity: 1;");
       clicked = true;
     } else {
-      menu.style.opacity = "0";
+      menu.setAttribute("style", "opacity: 0;pointer-events: none;");
       clicked = false;
     }
   }
