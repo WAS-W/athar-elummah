@@ -164,10 +164,8 @@ function goSurah(surahNum) {
           document.querySelector(".ayah-container").innerHTML = `
           ${selectedSurah.ayahs.map(
             (ayah) => `
-                <p>${ayah.text}</p>
-                <span class="flex-col">
-                  ${ayah.numberInSurah}
-                </span>
+                <p>${ayah.text}
+                <span class="flex-col">${ayah.numberInSurah}</span></p>
             `
           )
           .join('')}

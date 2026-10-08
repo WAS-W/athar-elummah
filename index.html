@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontsource-amiri-quran/5.3.0/index.css">
+    <link rel="icon" href="./favicon.jpeg" type="image/x-icon" >
     <title>Athar</title>
 </head>
 <body style="overflow: hidden;">
@@ -94,7 +95,13 @@ document.querySelector(".text").textContent = text;
 setInterval( () => {
   let is = Math.floor(Math.random() * random_dhekr.length);
   document.querySelector(".rand").textContent = random_dhekr[is]
-},7000)
+  document.querySelector(".random-dhekr").style.textShadow = "0 0 30px var(--main-text)"
+  document.querySelector(".random-dhekr").style.transform = "scale(1.3)"
+  setTimeout(() => {
+     document.querySelector(".random-dhekr").style.textShadow = "0 0 0 var(--gold)"
+     document.querySelector(".random-dhekr").style.transform = "scale(1)"
+      }, 500)
+},3000)
 
 setInterval( () => {
   document.querySelector(".random-dhekr").style.boxShadow = "0 0 25px var(--nfea)"

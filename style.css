@@ -134,7 +134,7 @@ i:hover {
 
 .random-dhekr {
     padding: 10px;
-    width: 95%;
+    width: 98%;
     padding: 10px;
     position: absolute;
 top: 34%;
@@ -283,14 +283,24 @@ box-align: center;
 .scroll-container {
     overflow-y: scroll;
     position: relative;
-    top: 100px;
-    transform: translate(0, 150px);
-    width: 70%;
-    height: 400px;
+    margin-top: 100px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: calc(90vh - 145px);
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .posts-container {
-    width: 75%;
     border-radius: 10px;
     border: 1px solid var(--borders);
     background-color: var(--card);
@@ -331,11 +341,34 @@ box-align: center;
 }
 
 #quran {
-	margin-top: 30px;
+	margin: 30px auto;
     flex-wrap: wrap;
     font-family: 'Amiri Quran';
     font-size: 24px;
     font-weight: bold;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    background-color: var(--bg-color);
+}
+
+#quran::-webkit-scrollbar {
+    display: none;
+}
+
+#quran {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#ahadieth::-webkit-scrollbar {
+    display: none;
+}
+
+#ahadieth {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .go-surah {
@@ -363,7 +396,7 @@ box-align: center;
     background: var(--footer);
     border-radius: 10px;
     border: 1px solid var(--borders);
-    position: sticky;
+    position: fixed;
     right: 5px;
     top: 1px;
 }
@@ -431,11 +464,13 @@ box-align: center;
     align-items: center;
     flex-direction: column;
     color: var(--main-text);
+    background-color: #101b18;
 }
 
 .surah-name:hover {
     cursor: pointer;
-    border-color: var(--tags);
+    border-color: var(--gold);
+    background-color: #162521;
 }
 
 .quest-answer {
@@ -456,13 +491,24 @@ overflow-y: scroll;
     direction: rtl;
 }
 
+.quest-answer::-webkit-scrollbar {
+    display: none;
+}
+
+.quest-answer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .ayah-container {
-    background: rgb(216, 209, 170);
-    color: #0b1d15;
-    width: 100%;
+    background: transparent;
+    color: rgb(241, 235, 200);
+    width: 62%;
     height: 100%;
     font-size: 30px;
     overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .ayah-container span {
@@ -474,10 +520,28 @@ overflow-y: scroll;
     color: var(--second-text);
 }
 
+.ayah-container p {
+    width: 100%;
+}
+.ayah-container p:hover {
+    background-color:  rgba(241, 235, 200, 0.493);
+    height: auto;
+    padding: 1px;
+}
+.ayah-container::-webkit-scrollbar {
+    display: none;
+}
+
+.ayah-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 @media   (max-width: 600px) {
     .ayah-container {
-        background: rgb(216, 209, 170);
-        color: #0b1d15;
+        background: transparent;
+        color: rgb(216, 209, 170);
+        display: flex;
+        flex-wrap: wrap;;
         width: 100%;
         height: 100%;
         font-size: 20px;
@@ -491,6 +555,22 @@ overflow-y: scroll;
         background: var(--footer);
         color: var(--second-text);
     }
+    .ayah-container::-webkit-scrollbar {
+        display: none;
+    }
+    .quest-answer::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .quest-answer {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .ayah-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
     #quran {
         margin-top: 50px;
     }
@@ -499,30 +579,31 @@ overflow-y: scroll;
         border: 1px solid #757575be;
         border-radius: 5px;
         width: 95%;
-        height: 100px;
         margin: 5px;
+        height: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         color: var(--main-text);
+        background-color: #101b18;
     }
     
     .surah-name:hover {
         cursor: pointer;
-        border-color: var(--tags);
+        border-color: var(--gold);
+        background-color: #162521;
     }
     
 
-.scroll-container {
-    overflow-y: scroll;
-    position: relative;
-    top: 40px;
-    transform: translateY(40px);
-    width: 99%;
-    height: 400px;
-    margin: 1px auto;
-}
+    .scroll-container {
+        margin-top: 100px;
+        margin-bottom: 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: 99%;
+        height: calc(90vh - 180px);
+    }
 
 .posts-container {
     width: 95%;
@@ -569,6 +650,23 @@ overflow-y: scroll;
     pointer-events: none;
 }
 
+#quran::-webkit-scrollbar {
+    display: none;
+}
+
+#quran {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#ahadieth::-webkit-scrollbar {
+    display: none;
+}
+
+#ahadieth {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 .login {
     position: absolute;
     top: 50%;
@@ -687,9 +785,17 @@ overflow-y: scroll;
     direction: rtl;
 }
 
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 .random-dhekr {
     padding: 10px;
-    width: 95%;
+    width: 98%;
     padding: 10px;
     position: absolute;
 margin: 27% auto;
