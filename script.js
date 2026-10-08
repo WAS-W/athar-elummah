@@ -227,6 +227,7 @@ if (window.location.pathname.endsWith("ahadieth.html")) {
     <p class="hadith">${data.data.arabic}</p>
     <strong style="color: var(--second-text);font-size: 22px;">رواه البخاري</strong>
     <hr />
+    </div>
     `})
     .catch(err => console.error(err))
     fetch(`https://ummahapi.com/api/hadith/muslim/${i}`)
@@ -236,6 +237,7 @@ if (window.location.pathname.endsWith("ahadieth.html")) {
     <p class="hadith">${data.data.arabic}</p>
     <strong style="color: var(--second-text);font-size: 22px;">رواه مسلم</strong>
     <hr />
+    </div>
     `})
     .catch(err => console.error(err))
   }
